@@ -1,0 +1,34 @@
+import { useNavigate } from "react-router-dom";
+import { useGame } from "../context/GameContext";
+
+export default function Home() {
+  const navigate = useNavigate();
+  const { setStarted } = useGame();
+
+  const startGame = () => {
+    setStarted(true);
+    navigate("/game");
+  };
+
+  return (
+    <div className="home">
+      <h1>🔍 Inspect to Win</h1>
+
+      <p>
+        A fast-paced interactive event where your debugging skills are tested.
+        Use Inspect Element, DevTools, React DevTools, and logic to uncover hidden clues.
+      </p>
+
+      <ul>
+        <li>⏱ Max Time: 10 Minutes</li>
+        <li>🔀 Questions & options are randomized</li>
+        <li>🛠 DevTools allowed & encouraged</li>
+        <li>🚫 No refresh</li>
+      </ul>
+
+      <button onClick={startGame} className="start-btn">
+        Start Challenge
+      </button>
+    </div>
+  );
+}

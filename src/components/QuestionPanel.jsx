@@ -1,35 +1,80 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { shuffle } from "../utils/shuffle";
 
-export default function QuestionPanel({ data, onCorrect }) {
+export default function QuestionPanel({ data, onCorrect, onAnswer }) {
   const [selected, setSelected] = useState(null);
+  const [feedback, setFeedback] = useState(null); // 'correct' or 'wrong'
   const [shuffledOptions, setShuffledOptions] = useState([]);
+  const [isAnswering, setIsAnswering] = useState(false); // prevent double clicks
+  const answerTimeoutRef = useRef(null); // Track timeout for cleanup
 
   /* --------------------------------
      SHUFFLE OPTIONS ONCE PER QUESTION
   --------------------------------- */
   useEffect(() => {
     setSelected(null);
+    setFeedback(null);
+    setIsAnswering(false);
 
     // Small delay = smoother UX (optional but premium)
     const t = setTimeout(() => {
       setShuffledOptions(shuffle(data.options));
     }, 300);
 
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t);
+      // Clear any pending answer timeout when question changes
+      if (answerTimeoutRef.current) {
+        clearTimeout(answerTimeoutRef.current);
+        answerTimeoutRef.current = null;
+      }
+    };
   }, [data]);
 
   /* --------------------------------
-     SUBMIT HANDLER
+     HANDLE OPTION CLICK
   --------------------------------- */
-  const handleSubmit = () => {
-    if (!selected) return;
+  const handleOptionClick = (option) => {
+    if (isAnswering) return; // Prevent multiple clicks
+    setIsAnswering(true);
+    setSelected(option);
 
-    if (selected === data.correct) {
-      onCorrect();
+    const isCorrect = option === data.correct;
+
+    if (isCorrect) {
+      setFeedback("correct");
     } else {
-      alert("Incorrect 👀 Somewhere on the screen another hint is provided");
+      setFeedback("wrong");
     }
+
+    // Delay to show feedback before moving on
+    answerTimeoutRef.current = setTimeout(() => {
+      // Report answer correctness to parent for score tracking
+      if (onAnswer) {
+        onAnswer(isCorrect);
+      }
+      // Always advance to next question
+      onCorrect();
+      answerTimeoutRef.current = null;
+    }, 800); // 0.8s delay
+  };
+
+  const getButtonClass = (option) => {
+    // If not answering yet, no special class
+    if (!isAnswering) return "";
+
+    // Always highlight the correct answer in green
+    if (option === data.correct) {
+      return "correct";
+    }
+
+    // Checking if this specific option was the one selected by the user
+    // If it was selected AND it wasn't the correct one (which we covered above), mark it wrong
+    if (selected === option) {
+      return "wrong";
+    }
+
+    return "";
   };
 
   return (
@@ -39,20 +84,13 @@ export default function QuestionPanel({ data, onCorrect }) {
       {shuffledOptions.map((option) => (
         <button
           key={option}
-          onClick={() => setSelected(option)}
-          className={selected === option ? "active" : ""}
+          onClick={() => handleOptionClick(option)}
+          className={getButtonClass(option)}
+          disabled={isAnswering}
         >
           {option}
         </button>
       ))}
-
-      <button
-        onClick={handleSubmit}
-        className="submit-btn"
-        disabled={!selected}
-      >
-        Submit
-      </button>
     </div>
   );
 }

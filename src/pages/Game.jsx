@@ -26,7 +26,7 @@ if (!storedQuestions) {
 
 export default function Game() {
   const navigate = useNavigate();
-  const { setCompleted, timeLeft } = useGame();
+  const { setCompleted, timeLeft, incrementCorrect, incrementIncorrect } = useGame();
 
   /* -------------------------------
      RESTORE CURRENT QUESTION INDEX
@@ -51,6 +51,17 @@ export default function Game() {
       navigate("/result");
     }
   }, [timeLeft, navigate, setCompleted]);
+
+  /* -------------------------------
+     HANDLE ANSWER (SCORE TRACKING)
+  -------------------------------- */
+  const handleAnswer = (isCorrect) => {
+    if (isCorrect) {
+      incrementCorrect();
+    } else {
+      incrementIncorrect();
+    }
+  };
 
   /* -------------------------------
      HANDLE CORRECT ANSWER
@@ -79,12 +90,22 @@ export default function Game() {
       total={shuffledQuestions.length}
     />
 
+    {/* Question Counter */}
+    <div className="question-counter">
+      Question {index + 1} / {shuffledQuestions.length}
+    </div>
+
     <div className="game-layout">
       <QuestionPanel
+        key={shuffledQuestions[index].id}
         data={shuffledQuestions[index]}
         onCorrect={handleCorrect}
+        onAnswer={handleAnswer}
       />
-      <CluePanel type={shuffledQuestions[index].type} />
+      <CluePanel 
+        type={shuffledQuestions[index].type} 
+        hints={shuffledQuestions[index].hints} 
+      />
     </div>
   </>
   );

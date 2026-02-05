@@ -1,4 +1,4 @@
-export default function CluePanel({ type }) {
+export default function CluePanel({ type, hints }) {
   if (type === "blinking") {
     return (
       <div className="clue blinking">
@@ -8,8 +8,12 @@ export default function CluePanel({ type }) {
   }
 
   if (type === "image-alt") {
-    return <img src="/broken.png" alt="ALT_TEXT" />;
+    return (
+      <div className="clue">
+        <img src="/broken.png" alt="ALT_TEXT" style={{ maxWidth: "100%", display: "block", margin: "0 auto" }} />
+      </div>
+    );
   }
 
-  return <div className="clue">Use your tools wisely.</div>;
+  return <div className="clue">{hints?.primary || "Use your tools wisely."}</div>;
 }

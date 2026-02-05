@@ -3,9 +3,10 @@ import { useGame } from "../context/GameContext";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { setStarted } = useGame();
+  const { setStarted, resetScore } = useGame();
 
   const startGame = () => {
+    resetScore();
     setStarted(true);
     navigate("/game");
   };

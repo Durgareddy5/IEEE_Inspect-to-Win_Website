@@ -6,6 +6,7 @@ import QuestionPanel from "../components/QuestionPanel";
 import CluePanel from "../components/CluePanel";
 import { useGame } from "../context/GameContext";
 import ProgressBar from "../components/ProgressBar";
+import IceBreaker from "../components/IceBreaker";
 
 
 /* -------------------------------
@@ -26,7 +27,7 @@ if (!storedQuestions) {
 
 export default function Game() {
   const navigate = useNavigate();
-  const { setCompleted, timeLeft, incrementCorrect, incrementIncorrect } = useGame();
+  const { setCompleted, timeLeft, incrementCorrect, incrementIncorrect, setIsPaused } = useGame();
 
   /* -------------------------------
      RESTORE CURRENT QUESTION INDEX
@@ -34,6 +35,11 @@ export default function Game() {
   const [index, setIndex] = useState(
     Number(sessionStorage.getItem("currentIndex")) || 0
   );
+
+  /* -------------------------------
+     ICE BREAKER STATE
+  -------------------------------- */
+  const [showIceBreaker, setShowIceBreaker] = useState(false);
 
   /* -------------------------------
      PERSIST INDEX ON CHANGE
@@ -67,12 +73,28 @@ export default function Game() {
      HANDLE CORRECT ANSWER
   -------------------------------- */
   const handleCorrect = () => {
+    // Check if we just answered Question 4 (index 3)
+    if (index === 3) {
+      setShowIceBreaker(true);
+      setIsPaused(true);
+      return; 
+    }
+
     if (index + 1 >= shuffledQuestions.length) {
       setCompleted(true);
       navigate("/result");
     } else {
       setIndex(index + 1);
     }
+  };
+
+  /* -------------------------------
+     HANDLE ICE BREAKER COMPLETE
+  -------------------------------- */
+  const handleIceBreakerComplete = () => {
+    setShowIceBreaker(false);
+    setIsPaused(false);
+    setIndex(index + 1); // Move to Question 5
   };
 
   /* -------------------------------
@@ -85,29 +107,35 @@ export default function Game() {
 
   return (
     <>
-    <ProgressBar
-      current={index}
-      total={shuffledQuestions.length}
-    />
-
-    {/* Question Counter */}
-    <div className="question-counter">
-      Question {index + 1} / {shuffledQuestions.length}
-    </div>
-
-    <div className="game-layout">
-      <QuestionPanel
-        key={shuffledQuestions[index].id}
-        data={shuffledQuestions[index]}
-        onCorrect={handleCorrect}
-        onAnswer={handleAnswer}
+      <ProgressBar
+        current={index}
+        total={shuffledQuestions.length}
       />
-      <CluePanel 
-        type={shuffledQuestions[index].type} 
-        hints={shuffledQuestions[index].hints} 
-      />
-    </div>
-  </>
+
+      {/* Question Counter */}
+      <div className="question-counter">
+        Question {index + 1} / {shuffledQuestions.length}
+      </div>
+
+      <div className="game-layout">
+        {showIceBreaker ? (
+          <IceBreaker onComplete={handleIceBreakerComplete} />
+        ) : (
+          <>
+            <QuestionPanel
+              key={shuffledQuestions[index].id}
+              data={shuffledQuestions[index]}
+              onCorrect={handleCorrect}
+              onAnswer={handleAnswer}
+            />
+            <CluePanel 
+              type={shuffledQuestions[index].type} 
+              hints={shuffledQuestions[index].hints} 
+            />
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

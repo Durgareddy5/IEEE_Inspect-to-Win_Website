@@ -25,6 +25,11 @@ export const GameProvider = ({ children }) => {
     Number(sessionStorage.getItem("incorrectCount")) || 0
   );
 
+  /* -------------------------------
+     PAUSE STATE
+  -------------------------------- */
+  const [isPaused, setIsPaused] = useState(false);
+
   // Persist state
   useEffect(() => {
     sessionStorage.setItem("started", started);
@@ -36,7 +41,7 @@ export const GameProvider = ({ children }) => {
 
   // Timer logic
   useEffect(() => {
-    if (!started || completed) return;
+    if (!started || completed || isPaused) return;
 
     const timer = setInterval(() => {
       setTimeLeft((t) => {
@@ -49,7 +54,7 @@ export const GameProvider = ({ children }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [started, completed]);
+  }, [started, completed, isPaused]);
 
   const incrementCorrect = () => setCorrectCount((c) => c + 1);
   const incrementIncorrect = () => setIncorrectCount((c) => c + 1);
@@ -59,6 +64,7 @@ export const GameProvider = ({ children }) => {
     setIncorrectCount(0);
     sessionStorage.setItem("correctCount", 0);
     sessionStorage.setItem("incorrectCount", 0);
+    setIsPaused(false);
   };
 
   return (
@@ -74,6 +80,8 @@ export const GameProvider = ({ children }) => {
       incrementCorrect,
       incrementIncorrect,
       resetScore,
+      isPaused,
+      setIsPaused,
       MAX_TIME
     }}>
       {children}

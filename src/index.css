@@ -59,11 +59,57 @@ button {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 64px;
+  justify-content: flex-start;
+  /* changed from center */
+  padding: 48px;
+  /* reduced from 64px */
   max-width: 900px;
   margin: auto;
 }
+
+/* Logos Header */
+.logo-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  /* reduced from 20px */
+  margin-bottom: 32px;
+  /* reduced from 40px */
+}
+
+.main-logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-logo {
+  height: 80px;
+  /* reduced from 100px */
+  object-fit: contain;
+}
+
+.sub-logos-container {
+  display: flex;
+  gap: 20px;
+  /* reduced from 24px */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-logo {
+  height: 50px;
+  /* reduced from 60px */
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.sub-logo:hover {
+  opacity: 1;
+}
+
 
 .home h1 {
   font-size: 3.2rem;

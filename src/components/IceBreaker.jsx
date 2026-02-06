@@ -84,6 +84,9 @@ export default function IceBreaker({ onComplete }) {
                                 </button>
                             </div>
                         )}
+                        <button onClick={onComplete} className="skip-btn">
+                            Skip
+                        </button>
                     </div>
                 </div>
             </div>

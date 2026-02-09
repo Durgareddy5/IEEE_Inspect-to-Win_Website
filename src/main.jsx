@@ -5,7 +5,11 @@ import "./index.css";
 import { HashRouter } from "react-router-dom";
 import { GameProvider } from "./context/GameContext";
 
+
+console.log("ANSWER: console_is_key");
+
 ReactDOM.createRoot(document.getElementById("root")).render(
+
   <React.StrictMode>
     <HashRouter >
       <GameProvider>

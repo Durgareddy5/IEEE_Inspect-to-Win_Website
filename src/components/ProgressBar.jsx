@@ -3,6 +3,7 @@ export default function ProgressBar({ current, total }) {
 
   return (
     <div className="progress-container">
+      <div style={{display:"none"}}>div_secret_99</div>
       <div
         className="progress-bar"
         style={{ width: `${percentage}%` }}

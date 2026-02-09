@@ -11,9 +11,10 @@ import NotFoundUseful from "./pages/NotFoundUseful";
 import Timer from "./components/Timer";
 import { useGame } from "./context/GameContext";
 
+
+
 export default function App() {
   const { started } = useGame();
-
   return (
     <>
       {started && <Timer />}

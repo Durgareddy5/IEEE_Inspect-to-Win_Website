@@ -43,7 +43,7 @@ export default function Home() {
         <li>🏆 Finish all questions before time runs out</li>
         <li>🚫 Using Third party apps are not Encouraged </li>
       </ul>
-
+      {console.log("ANSWER: console_is_key")}
       <button className="start-btn" onClick={handleStart}>
         Start Challenge
       </button>

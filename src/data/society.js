@@ -1,83 +1,83 @@
-const society =[
+const society = [
   {
     "id": 1,
     "level": "IEEE",
-    "question": "What is the output of this 2-input AND gate?\n\nInput A = 1\nInput B = 0\nOutput = ?",
-    "options": ["0", "1", "High Impedance", "Undefined"],
-    "correct": "0",
-    "hints": "AND gate outputs 1 only when both inputs are 1."
+    "question": "If you get ₹50,000 funding, what social-impact project will you start?",
+    "options": ["Pollution", "Education", "Healthcare", "Employment"],
+    "correct": "Education",
+    "hints": "Consider which sector has the most scalable impact with limited funding and can create long-term change."
   },
   {
     "id": 2,
     "level": "IEEE",
-    "question": "Convert binary 1011 to decimal.\n\nBinary: 1011\nDecimal = ?",
-    "options": ["9", "10", "11", "12"],
-    "correct": "11",
-    "hints": "Calculate: 1×8 + 0×4 + 1×2 + 1×1"
+    "question": "How can technology solve a local community problem?",
+    "options": ["Sensors", "Apps", "AI", "Automation"],
+    "correct": "Apps",
+    "hints": "Think about the most accessible and user-friendly technology that connects people directly to solutions."
   },
   {
     "id": 3,
     "level": "IEEE",
-    "question": "What is the output of this XOR gate?\n\nInput A = 1\nInput B = 1\nOutput = ?",
-    "options": ["0", "1", "High Impedance", "X"],
-    "correct": "0",
-    "hints": "XOR outputs 1 when inputs are different."
+    "question": "How do satellites stay in orbit without falling to Earth?",
+    "options": ["Gravity", "Speed", "Magnetism", "Fuel"],
+    "correct": "Speed",
+    "hints": "Satellites maintain orbital velocity, creating a balance between falling and moving forward."
   },
   {
     "id": 4,
     "level": "IEEE",
-    "question": "What is the 2's complement of binary 0101?\n\nOriginal: 0101\n2's Complement = ?",
-    "options": ["1010", "1011", "0101", "1100"],
-    "correct": "1011",
-    "hints": "Invert all bits then add 1."
+    "question": "Drone for disaster rescue: best feature?",
+    "options": ["Camera", "GPS", "Payload", "Battery"],
+    "correct": "GPS",
+    "hints": "In disaster scenarios, precise location tracking and navigation are critical for effective rescue operations."
   },
   {
     "id": 5,
     "level": "IEEE",
-    "question": "What is the output of a NOT gate with input 1?\n\nInput = 1\nOutput = ?",
-    "options": ["0", "1", "High Impedance", "X"],
-    "correct": "0",
-    "hints": "NOT gate inverts the input."
+    "question": "Difference between robotics and automation?",
+    "options": ["Intelligence", "Sensors", "Movement", "Control"],
+    "correct": "Intelligence",
+    "hints": "Robotics involves adaptive decision-making, while automation typically follows pre-programmed sequences."
   },
   {
     "id": 6,
     "level": "IEEE",
-    "question": "How many rows are in a truth table for 3 input variables?\n\nNumber of inputs = 3\nNumber of rows = ?",
-    "options": ["6", "8", "9", "3"],
-    "correct": "8",
-    "hints": "Formula: 2^n where n is number of inputs."
+    "question": "Robot for college: what problem will it solve?",
+    "options": ["Security", "Cleaning", "Delivery", "Attendance"],
+    "correct": "Attendance",
+    "hints": "Consider which repetitive administrative task could be automated to save time and improve accuracy."
   },
   {
     "id": 7,
     "level": "IEEE",
-    "question": "What is the hexadecimal equivalent of binary 1111?\n\nBinary: 1111\nHexadecimal = ?",
-    "options": ["E", "F", "10", "15"],
-    "correct": "F",
-    "hints": "1111 in binary equals 15 in decimal."
+    "question": "Smart grids are mainly for?",
+    "options": ["Efficiency", "Generation", "Storage", "Billing"],
+    "correct": "Efficiency",
+    "hints": "Smart grids optimize power distribution and consumption using real-time data and intelligent control."
   },
   {
     "id": 8,
     "level": "IEEE",
-    "question": "What is the output of OR gate with inputs A=0, B=0?\n\nInput A = 0\nInput B = 0\nOutput = ?",
-    "options": ["0", "1", "X", "Z"],
-    "correct": "0",
-    "hints": "OR outputs 1 if at least one input is 1."
+    "question": "Biggest challenge in renewable energy?",
+    "options": ["Cost", "Storage", "Weather", "Space"],
+    "correct": "Storage",
+    "hints": "Renewable sources are intermittent; the key challenge is storing energy for use when generation is low."
   },
   {
     "id": 9,
     "level": "IEEE",
-    "question": "What is the decimal value of hexadecimal A?\n\nHexadecimal: A\nDecimal = ?",
-    "options": ["9", "10", "11", "12"],
-    "correct": "10",
-    "hints": "In hex: A=10, B=11, C=12, D=13, E=14, F=15"
+    "question": "Which FACTS device is used for dynamic reactive power compensation?",
+    "options": ["STATCOM", "SVC", "TCSC", "UPFC"],
+    "correct": "STATCOM",
+    "hints": "This device uses voltage source converters to provide fast reactive power support in transmission systems."
   },
   {
     "id": 10,
     "level": "IEEE",
-    "question": "What is the output of NAND gate with inputs A=1, B=1?\n\nInput A = 1\nInput B = 1\nOutput = ?",
-    "options": ["0", "1", "X", "Z"],
-    "correct": "0",
-    "hints": "NAND is NOT of AND gate."
+    "question": "What is the name of the boundary where Earth's atmosphere merges into space?",
+    "options": ["Kármán line", "Stratopause", "Exosphere", "Thermosphere"],
+    "correct": "Kármán line",
+    "hints": "This boundary is internationally recognized at approximately 100 km above sea level."
   }
 ]
 

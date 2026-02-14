@@ -12,28 +12,10 @@ import { useGame } from "../context/GameContext";
 /* -------------------------------
    LOCK QUESTION ORDER PER SESSION
 -------------------------------- */
-// const storedQuestions = sessionStorage.getItem("questionOrder");
-
-// const shuffledQuestions = storedQuestions
-//   ? JSON.parse(storedQuestions)
-//   : shuffle(questions);
-
-// if (!storedQuestions) {
-//   sessionStorage.setItem("questionOrder", JSON.stringify(shuffledQuestions));
-// }
-
-const storedQuestions = sessionStorage.getItem("questionOrder");
-
-const shuffledQuestions = storedQuestions
-  ? JSON.parse(storedQuestions)
-  : buildGameQuestions();
-
-if (!storedQuestions) {
-  sessionStorage.setItem("questionOrder", JSON.stringify(shuffledQuestions));
-}
-
 
 export default function Game() {
+  const shuffledQuestions = JSON.parse(sessionStorage.getItem("questionOrder")) || [];
+
   const navigate = useNavigate();
 
   const {

@@ -698,6 +698,10 @@ button {
   box-shadow: none;
 }
 
+#header{
+  text-align: center;
+}
+
 /* ------------------------------------------------------------
    TIMER PREMIUM EFFECT
 ------------------------------------------------------------ */
@@ -1001,6 +1005,7 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
+  margin-left:450px;
 }
 
 .ice-skip-btn:hover {
@@ -1008,4 +1013,32 @@ button {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(249, 115, 22, 0.2);
   color: #c2410c;
+}
+
+
+/* =========================
+   FINAL QUESTION INPUT BOX
+========================= */
+
+.descriptive-box {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.descriptive-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.descriptive-input:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
 }

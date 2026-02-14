@@ -131,7 +131,6 @@ export default function IceBreakerCard({ onClose }) {
 
         <div className="ice-media">
           <img className="ice-img" src={randomMeme.img} alt="meme" />
-          <img className="ice-gif" src={randomMeme.gif} alt="gif" />
         </div>
       </div>
     </div>

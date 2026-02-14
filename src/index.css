@@ -18,6 +18,8 @@ html, body {
   height: 100%;
 }
 
+
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #f8fbff, #eef3ff);
@@ -74,6 +76,7 @@ button {
   max-width: 900px;
   margin: auto;
 }
+
 
 .home h1 {
   font-size: 3.2rem;
@@ -968,6 +971,11 @@ button {
   align-items: center; /* Vertically centers the images */
   justify-content: center; /* Horizontally centers the group in the div */
   gap: 130px; /* Sets exactly 30px of space between each image */
+}
+
+.logos img {
+  height: 70px;
+  object-fit: contain;    /* Maintains aspect ratio */
 }
 
 

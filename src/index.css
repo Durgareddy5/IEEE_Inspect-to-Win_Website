@@ -361,7 +361,6 @@ border: 1px solid;
 */
 
 .question-status-bar {
-  position: fixed;
   top: 80px; /* below progress bar */
   left: 50px;
   width: 93.3%;

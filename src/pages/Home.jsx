@@ -2,26 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useGame } from "../context/GameContext";
 import { buildGameQuestions } from "../utils/buildGameQuestions";
 
-// export default function Home() {
-//   const navigate = useNavigate();
-//   const { setStarted, setCompleted, setTimeLeft, MAX_TIME } = useGame();
-
-//   const handleStart = () => {
-//     // Clear old session data
-//     sessionStorage.clear();
-
-//     // Fresh start time
-//     sessionStorage.setItem("startTime", Date.now());
-
-//     // Reset context
-//     setStarted(true);
-//     setCompleted(false);
-//     setTimeLeft(MAX_TIME);
-
-//     navigate("/game");
-//   };
-
-
 export default function Home() {
   const navigate = useNavigate();
   const { MAX_TIME, setStarted, setCompleted, setTimeLeft } = useGame();

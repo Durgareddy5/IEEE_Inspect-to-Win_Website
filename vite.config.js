@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/IEEE_Inspect-to-Win_Website/',
+  base: process.env.VITE_BASE_PATH ||'/IEEE_Inspect-to-Win_Website/',
   plugins: [react()],
 })

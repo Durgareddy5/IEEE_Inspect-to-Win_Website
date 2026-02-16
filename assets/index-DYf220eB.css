@@ -6,7 +6,7 @@
   --secretKey: "id:17";
 }
 
-/* id:22: Find element with data-next='vault' */
+/* id:22: Find element with attribute data-next='' check the info in that attribute */
 
 * {
   margin: 0;
@@ -43,8 +43,7 @@ button {
 */
 
 
-:root {
-  --secretKey: "root_winner";
+:root25{
   --q25-step2: "Search HTML comments for id:25";
 }
 
@@ -355,7 +354,7 @@ button {
 /* id:30
 #startHard10{ 
 border: 1px solid;
-} /* STEP2: Find #finalBoss 
+} /* STEP2: Find #finalBoss(div with id finalBoss) search in Elements
 */
 
 /* 
@@ -460,7 +459,7 @@ border: 1px solid;
 }
 
 /* #vaultHint::after {
-   content: \"id:29 Find element with id=finalVault\"; 
+   content: \"id:29 Find element with id=finalVault\ in elements tab"; 
 } */
 
 .score-row.incorrect {

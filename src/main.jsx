@@ -8,8 +8,8 @@ import { GameProvider } from "./context/GameContext";
 
 console.log("ANSWER: console_is_key");
 
-/* id 12 Clue: Check localStorage key 'medium2' for the answer */
-console.log("CLUE: Check localStorage key 'medium2'");
+/* id 12 Clue: Check localStorage key 'Treasure' for the answer */
+console.log("id:12 Check localStorage key 'Treasure'");
 // id 12 Answer stored in localStorage
 localStorage.setItem('Treasure', 'M090');   
 sessionStorage.setItem('Treasure', 'M090');
@@ -17,18 +17,15 @@ sessionStorage.setItem('Treasure', 'M090');
 // id 16 Answer
 console.log("id:16 final_console_flag");
 // id 17 
-localStorage.setItem("hint7", "Check CSS :root variables");
-
-
-console.log("id:21  Check localStorage key hard1_final");
-
+localStorage.setItem("hint17", "Check CSS :root variables (For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.)");
+console.log("id:21  Check the value of localStorage key hard1_final");
 localStorage.setItem("hard1_final", "inspect_chain");
 
 
 console.log("id 20: Search for attribute data-secret in Elements");
 
 
-console.log("id: 25-STEP1: Check CSS variable --q25-step2");
+console.log("id: 25-STEP1: Check CSS variable root25");
 
 window.runSecret = function () {
   console.log("inspect_execute");

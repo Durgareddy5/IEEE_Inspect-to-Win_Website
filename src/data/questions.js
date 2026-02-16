@@ -14,7 +14,7 @@ const questions = [
     hide: {
       step1: {
         place: "index.html",
-        how: "<!-- CLUE: Check index.css for the answer class (For index.css go to source tab and refresh(ctrl+R) -->",
+        how: "<!-- CLUE: Check index.css for the answer class  -->",
         devtoolsTab: "Elements"
       },
       step2: {
@@ -84,7 +84,7 @@ const questions = [
     options: ["comment_flag_01", "hidden_comment_win", "note_secret", "flag_comment_99"],
     correct: "hidden_comment_win",
     hints: {
-      primary: "CSS can whisper the location of the answer.(For index.css go to source tab and refresh(ctrl+R)",
+      primary: "CSS can whisper the location of the answer. (For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.) ",
       misleading: "Try checking localStorage."
     },
     targetPages: ["/game"],
@@ -106,7 +106,7 @@ const questions = [
   {
     id: 15,
     level: "medium",
-    question: "id:15 What is the secret key inside shuffle.js?",
+    question: "id:15 What is the value of secret key inside shuffle.js?",
     options: ["manifest_unlock", "pwa_secret_key", "manifest_flag_01", "hidden_manifest"],
     correct: "pwa_secret_key",
     hints: {
@@ -170,7 +170,7 @@ const questions = [
     hide: {
       step1: {
         place: "main.js",
-        how: 'localStorage.setItem("hint7","Check CSS :root variables"), (For index.css go to source tab and refresh(ctrl+R);',
+        how: 'localStorage.setItem("hint7","Check CSS :root variables")',
         devtoolsTab: "Application > LocalStorage"
       },
       step2: {
@@ -184,11 +184,11 @@ const questions = [
   {
     id: 18,
     level: "medium",
-    question: "id:18 What is written inside pages/playgorund/Experimental?",
+    question: "id:18 What is written inside Experimental?",
     options: ["file_secret_77", "hidden_file_win", "robots_answer", "text_flag"],
     correct: "hidden_file_win",
     hints: {
-      primary: "Robots are warned for a reason.",
+      primary: "Check index.html",
       misleading: "Try checking CSS."
     },
     targetPages: ["/game"],
@@ -271,7 +271,7 @@ const questions = [
     options: ["vault_777", "hard_div_answer", "final_hidden_box", "deep_inspect_win"],
     correct: "deep_inspect_win",
     hints: {
-      primary: "CSS gives the first clue.",
+      primary: "CSS gives the first clue.(For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.)",
       misleading: "Try checking console logs."
     },
     targetPages: ["/game"],
@@ -298,11 +298,11 @@ const questions = [
   {
     id: 23,
     level: "hard",
-    question: "id:23 What is the decoded secret from /secret/base.txt?",
+    question: "id:23 What is the decoded secret from manifest.json?",
     options: ["decode_hard", "hard_decode_win", "inspect_b64_master", "final_b64"],
     correct: "inspect_b64_master",
     hints: {
-      primary: "Robots hide forbidden paths.",
+      primary: "Inspect the elements tab",
       misleading: "Try checking localStorage."
     },
     targetPages: ["/game"],
@@ -329,7 +329,7 @@ const questions = [
   {
     id: 24,
     level: "hard",
-    question: "id:24 What is the flag returned from /api/finalHard4?",
+    question: "id:24 What is the flag returned from. finalHard4?",
     options: ["FLAG{META}", "FLAG{PWA}", "FLAG{HARD4_WIN}", "FLAG{NETWORK_END}"],
     correct: "FLAG{HARD4_WIN}",
     hints: {
@@ -364,7 +364,7 @@ const questions = [
     options: ["final_comment_77", "hidden_note_hard", "inspect_comment_master", "hard_flag_999"],
     correct: "inspect_comment_master",
     hints: {
-      primary: "Console leads to CSS. CSS leads to HTML.",
+      primary: "Console leads to Answer.",
       misleading: "Try checking the network tab."
     },
     targetPages: ["/game"],
@@ -426,7 +426,7 @@ const questions = [
     options: ["hard_store_77", "final_hard7", "inspect_storage_win", "chain_complete"],
     correct: "chain_complete",
     hints: {
-      primary: "CSS points to hidden HTML. Hidden HTML points to storage.",
+      primary: "CSS points to Answer.",
       misleading: "Try searching for the answer directly."
     },
     targetPages: ["/game"],
@@ -457,7 +457,7 @@ const questions = [
     options: ["vault_secret_88", "final_css_unlock", "deep_hidden_key", "inspect_vault_final"],
     correct: "inspect_vault_final",
     hints: {
-      primary: "HTML gives a clue, CSS gives the location, Elements gives the answer.",
+      primary: "HTML gives the Clue",
       misleading: "Try checking the network tab."
     },
     targetPages: ["/game"],
@@ -488,7 +488,7 @@ const questions = [
     options: ["console_chain_99", "execute_me_now", "inspect_exec_final", "final_run_flag"],
     correct: "inspect_exec_final",
     hints: {
-      primary: "Storage reveals the element, element reveals the function, function reveals the answer.",
+      primary: "Local Storage reveals the Clue.",
       misleading: "Try searching in HTML comments."
     },
     targetPages: ["/game"],
@@ -519,7 +519,7 @@ const questions = [
     options: ["tooltip_win", "final_hint_777", "hard_tooltip_secret", "inspect_final_boss"],
     correct: "inspect_final_boss",
     hints: {
-      primary: "Follow IDs like breadcrumbs.",
+      primary: "Navigate to Elements page and check for div with id='startHard10'",
       misleading: "Try checking the console."
     },
     targetPages: ["/game"],

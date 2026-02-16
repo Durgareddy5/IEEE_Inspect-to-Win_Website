@@ -6,4 +6,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: process.env.VITE_BASE_PATH ||'/IEEE_Inspect-to-Win_Website/',
   plugins: [react()],
+  build: {
+  minify: 'esbuild',
+  cssMinify: false, // Preserve CSS comments
+  esbuild: {
+    legalComments: 'inline', // Preserve JavaScript comments
+  },
+}
 })
+

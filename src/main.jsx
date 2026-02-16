@@ -17,7 +17,7 @@ sessionStorage.setItem('Treasure', 'M090');
 // id 16 Answer
 console.log("id:16 final_console_flag");
 // id 17 
-localStorage.setItem("hint17", "Check CSS :root variables (For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.)");
+localStorage.setItem("hint17", "Check CSS :root variables (For index.css go to source tab navigate to assets/index.css if code is not visible just refresh without closing anything.)");
 console.log("id:21  Check the value of localStorage key hard1_final");
 localStorage.setItem("hard1_final", "inspect_chain");
 

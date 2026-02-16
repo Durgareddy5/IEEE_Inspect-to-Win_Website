@@ -46,10 +46,9 @@ const memes = [
     img: "https://i.imgflip.com/4/1yxkcp.jpg"
   },
   {
-    title: "When you forget to save the file and wonder why nothing changes 🤡",
-    img: "https://i.imgflip.com/4/2p3dw.jpg"
+  title: "When you check the fridge knowing nothing new is inside 😭",
+  img: "https://i.imgflip.com/1g8my4.jpg"
   },
-
   {
     title: "When your code works but you don’t know why 😭",
     img: "https://i.imgflip.com/4/4t0m5.jpg"
@@ -70,6 +69,8 @@ const memes = [
     title: "When the bug disappears in demo 😭",
     img: "https://i.imgflip.com/4/2cp1.jpg"
   }
+  
+
 ];
 
 export default function IceBreakerCard({ onClose }) {

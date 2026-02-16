@@ -9,6 +9,7 @@ export default defineConfig({
   build: {
   minify: 'esbuild',
   cssMinify: false, // Preserve CSS comments
+  sourcemap:true,
   esbuild: {
     legalComments: 'inline', // Preserve JavaScript comments
   },

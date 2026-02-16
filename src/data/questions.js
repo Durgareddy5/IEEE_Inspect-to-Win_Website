@@ -14,7 +14,7 @@ const questions = [
     hide: {
       step1: {
         place: "index.html",
-        how: "<!-- CLUE: Check style.css for the answer class -->",
+        how: "<!-- CLUE: Check index.css for the answer class (For index.css go to source tab and refresh(ctrl+R) -->",
         devtoolsTab: "Elements"
       },
       step2: {
@@ -84,7 +84,7 @@ const questions = [
     options: ["comment_flag_01", "hidden_comment_win", "note_secret", "flag_comment_99"],
     correct: "hidden_comment_win",
     hints: {
-      primary: "CSS can whisper the location of the answer.",
+      primary: "CSS can whisper the location of the answer.(For index.css go to source tab and refresh(ctrl+R)",
       misleading: "Try checking localStorage."
     },
     targetPages: ["/game"],
@@ -170,7 +170,7 @@ const questions = [
     hide: {
       step1: {
         place: "main.js",
-        how: 'localStorage.setItem("hint7","Check CSS :root variables");',
+        how: 'localStorage.setItem("hint7","Check CSS :root variables"), (For index.css go to source tab and refresh(ctrl+R);',
         devtoolsTab: "Application > LocalStorage"
       },
       step2: {
@@ -184,7 +184,7 @@ const questions = [
   {
     id: 18,
     level: "medium",
-    question: "id:18 What is written inside /hidden.txt?",
+    question: "id:18 What is written inside pages/playgorund/Experimental?",
     options: ["file_secret_77", "hidden_file_win", "robots_answer", "text_flag"],
     correct: "hidden_file_win",
     hints: {
@@ -206,8 +206,7 @@ const questions = [
       }
     }
   },
-
-
+  
   {
     id: 20,
     level: "medium",

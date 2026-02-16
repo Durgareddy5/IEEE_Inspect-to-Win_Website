@@ -84,7 +84,7 @@ const questions = [
     options: ["comment_flag_01", "hidden_comment_win", "note_secret", "flag_comment_99"],
     correct: "hidden_comment_win",
     hints: {
-      primary: "CSS can whisper the location of the answer. (For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.) ",
+      primary: "CSS can whisper the location of the answer. (For index.css go to source tab navigate to assets/index.css if code is not visible just refresh without closing anything.) ",
       misleading: "Try checking localStorage."
     },
     targetPages: ["/game"],
@@ -271,7 +271,7 @@ const questions = [
     options: ["vault_777", "hard_div_answer", "final_hidden_box", "deep_inspect_win"],
     correct: "deep_inspect_win",
     hints: {
-      primary: "CSS gives the first clue.(For index.css go to source tab navigate to assets/index.css if code visible just refresh without closing anything.)",
+      primary: "CSS gives the first clue.(For index.css go to source tab navigate to assets/index.css if code is not visible just refresh without closing anything.)",
       misleading: "Try checking console logs."
     },
     targetPages: ["/game"],

@@ -35,7 +35,7 @@ window.runSecret = function () {
 localStorage.setItem("hard7","chain_complete");
 
 
-localStorage.setItem('hard29_clue','Find element with data-run=\"unlockFinal()\"');
+localStorage.setItem('hard29_clue','Find element with button id=finalBtn in elements tab');
 
 
 window.unlockFinal=function(){

@@ -496,7 +496,7 @@ const questions = [
     hide: {
       step1: {
         place: "main.js",
-        how: "localStorage.setItem('hard29_clue','Find element with data-run=\"unlockFinal()\"');",
+        how: "localStorage.setItem('hard29_clue','Find element with button id ='finalBtn');",
         devtoolsTab: "Application > LocalStorage"
       },
       step2: {

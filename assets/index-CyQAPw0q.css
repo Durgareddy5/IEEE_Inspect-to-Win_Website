@@ -221,6 +221,13 @@ button {
   margin: auto;
 }
 
+
+/* id 14 :*/
+#clue::after {
+  content: "Search HTML comments";
+  display: none;
+}
+
 .page h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -563,11 +570,6 @@ body::after {
 }
 
 
-/* id 14 :*/
-#clue::after {
-  content: "Search HTML comments";
-  display: none;
-}
 
 
 /* ------------------------------------------------------------

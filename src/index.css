@@ -222,7 +222,7 @@ button {
 }
 
 
-/* id 14 :*/
+/* id:14*/
 #clue::after {
   content: "Search HTML comments";
   display: none;

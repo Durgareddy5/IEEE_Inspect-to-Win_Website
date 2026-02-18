@@ -22,10 +22,10 @@ console.log("id:21  Check the value of localStorage key hard1_final");
 localStorage.setItem("hard1_final", "inspect_chain");
 
 
-console.log("id 20: Search for attribute data-secret in Elements");
+console.log("id:20 Search for attribute data-secret in Elements");
 
 
-console.log("id: 25-STEP1: Check CSS variable root25");
+console.log("id:25-STEP1: Check CSS variable root25");
 
 window.runSecret = function () {
   console.log("inspect_execute");
